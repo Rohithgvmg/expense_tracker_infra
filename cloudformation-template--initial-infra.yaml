@@ -62,7 +62,7 @@ Resources:
       CidrBlock: !FindInMap ['SubnetConfig','PrivateTwo','CIDR']
 
   InternetGateway:
-    Type: AWS::ec2::InternetGateway 
+    Type: AWS::EC2::InternetGateway 
   GatewayAttachment:
     Type: AWS::EC2::VPCGatewayAttachment
     Properties:
