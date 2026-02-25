@@ -123,7 +123,7 @@ Resources:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref PrivateRouteTableOne
-      DestinationCidrBlock: 0.0.0.0/0
+      DestinationCidrBlock: '0.0.0.0/0'
       NatGatewayId: !Ref NatGatewayOne
 
   PrivateRouteTableOneAssociation: 
@@ -140,7 +140,7 @@ Resources:
     Type: AWS::EC2::Route
     Properties:
       RouteTableId: !Ref PrivateRouteTableTwo
-      DestinationCidrBlock: 0.0.0.0/0
+      DestinationCidrBlock: '0.0.0.0/0'
       NatGatewayId: !Ref NatGatewayTwo
   PrivateRouteTableTwoAssociation:
     Type: AWS::EC2::SubnetRouteTableAssociation
@@ -153,10 +153,10 @@ Resources:
   PublicLoadBalancerSG:
     Type: AWS::EC2::SecurityGroup
     Properties:
-      GroundDescription: Access to the public facing load balancer 
+      GroupDescription: Access to the public facing load balancer 
       VpcId: !Ref VPC 
       SecurityGroupIngress:
-        - CidrIp: 0.0.0.0/0
+        - CidrIp: '0.0.0.0/0'
           IpProtocol: -1
   PublicLoadBalancer:
     Type: AWS::ElasticLoadBalancingV2::LoadBalancer 
